@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 168 100% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 168 100% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 168 100% 11%;
+
+    --primary: 168 100% 11%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 40% 96%;
+    --secondary-foreground: 168 100% 11%;
+
+    --muted: 150 10% 94%;
+    --muted-foreground: 168 15% 40%;
+
+    --accent: 145 78% 52%;
+    --accent-foreground: 168 100% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 90%;
+    --input: 150 15% 90%;
+    --ring: 145 78% 52%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 168 100% 11%;
+    --sidebar-foreground: 145 30% 85%;
+    --sidebar-primary: 145 78% 52%;
+    --sidebar-primary-foreground: 168 100% 11%;
+    --sidebar-accent: 168 80% 15%;
+    --sidebar-accent-foreground: 145 30% 85%;
+    --sidebar-border: 168 60% 18%;
+    --sidebar-ring: 145 78% 52%;
+
+    --chart-1: 145 78% 52%;
+    --chart-2: 168 100% 11%;
+    --chart-3: 145 60% 40%;
+    --chart-4: 168 50% 30%;
+    --chart-5: 145 40% 60%;
+  }
+
+  .dark {
+    --background: 168 100% 5%;
+    --foreground: 145 30% 90%;
+
+    --card: 168 80% 8%;
+    --card-foreground: 145 30% 90%;
+
+    --popover: 168 80% 8%;
+    --popover-foreground: 145 30% 90%;
+
+    --primary: 145 78% 52%;
+    --primary-foreground: 168 100% 5%;
+
+    --secondary: 168 50% 15%;
+    --secondary-foreground: 145 30% 90%;
+
+    --muted: 168 40% 15%;
+    --muted-foreground: 145 15% 55%;
+
+    --accent: 145 78% 52%;
+    --accent-foreground: 168 100% 5%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 168 40% 18%;
+    --input: 168 40% 18%;
+    --ring: 145 78% 52%;
+
+    --sidebar-background: 168 100% 5%;
+    --sidebar-foreground: 145 30% 85%;
+    --sidebar-primary: 145 78% 52%;
+    --sidebar-primary-foreground: 168 100% 5%;
+    --sidebar-accent: 168 60% 12%;
+    --sidebar-accent-foreground: 145 30% 85%;
+    --sidebar-border: 168 40% 15%;
+    --sidebar-ring: 145 78% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    border-width: 0;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Manrope', sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted-foreground) / 0.3) 25%,
+    hsl(var(--foreground) / 0.8) 50%,
+    hsl(var(--muted-foreground) / 0.3) 75%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.shimmer-text-light {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.3) 25%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0.3) 75%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.shimmer-block {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
